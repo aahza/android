@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView helloTv;
+    Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +34,23 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.item1:
                 helloTv.setText("Last menu item is Settings");
-            Toast.makeText(getBaseContext(), "Settings is choosen", Toast.LENGTH_SHORT).show();
+                showToast("Settings is choosen");
             break;
 
             case R.id.item2:
                 helloTv.setText("Last menu item is Additions");
 
-                Toast.makeText(getBaseContext(), "Additions is choosen", Toast.LENGTH_SHORT).show();
+                showToast("Additions is choosen");
                 break;
         }
-        return true;
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void showToast(String toast) {
+        if(mToast != null) {
+            mToast.cancel();
+        }
+        mToast = Toast.makeText(getBaseContext(), toast, Toast.LENGTH_SHORT);
+        mToast.show();
     }
 }
