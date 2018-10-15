@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MenuApp</string>
+    <string name="menu_opt1">Settings</string>
+    <string name="menu_opt2">Additions</string>
+</resources>
