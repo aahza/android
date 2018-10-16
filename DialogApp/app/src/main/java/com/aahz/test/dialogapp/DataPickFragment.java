@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatDialogFragment;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class DataPickFragment extends AppCompatDialogFragment implements DatePickerDialog.OnDateSetListener {
 
@@ -23,9 +25,11 @@ public class DataPickFragment extends AppCompatDialogFragment implements DatePic
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         TextView txt1 = (TextView) getActivity().findViewById(R.id.txt1);
-        txt1.setText("Year: " + view.getYear() +
-                " Month: " + view.getMonth() +
-                " Day: " + view.getDayOfMonth());
-
+//        txt1.setText("Year: " + view.getYear() +
+//                " Month: " + view.getMonth() +
+//                " Day: " + view.getDayOfMonth());
+        GregorianCalendar calendar = new GregorianCalendar(year, month, dayOfMonth);
+        SimpleDateFormat df = new SimpleDateFormat("dd MMMM-yyyy (EEEE)");
+        txt1.setText(df.format(calendar.getTime()));
     }
 }
