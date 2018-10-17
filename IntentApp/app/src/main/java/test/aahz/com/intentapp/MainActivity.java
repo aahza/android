@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SecondActivity.class));
                 break;
             case R.id.button2:
-                Toast.makeText(getApplicationContext(), "No action attached", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "No action attached", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, SecondActivity.class);
+                intent.putExtra("string", "I m from \n" + this.getClass().getName() + " & local name:\n" + getLocalClassName());
+                startActivity(intent);
                 break;
         }
     }

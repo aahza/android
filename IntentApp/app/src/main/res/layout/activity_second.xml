@@ -21,16 +21,18 @@
         app:srcCompat="@drawable/cat" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtV2"
         android:layout_width="321dp"
-        android:layout_height="34dp"
+        android:layout_height="151dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Cat"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
