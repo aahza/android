@@ -1,7 +1,5 @@
 package test.aahz.com.intentapp;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +27,7 @@ public class SecondActivity  extends AppCompatActivity {
 
         imv = (ImageView) findViewById(R.id.imageView);
 
-        imv.setImageResource(getIntent().getIntExtra("image", R.drawable.cat));
+        imv.setImageResource(getIntent().getIntExtra("image", R.drawable.cat_background));
 
         //from bitmap
 //        byte[] bImage = getIntent().getByteArrayExtra("byte_image");
