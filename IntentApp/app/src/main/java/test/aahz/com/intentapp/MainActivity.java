@@ -1,6 +1,7 @@
 package test.aahz.com.intentapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -15,13 +16,19 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int CAMERA = 100;
+    private static final String F_NAME = "text_aaz.txt";
     private Bitmap cameraImg;
     ImageView imvMain;
+    SharedPreferences preferences;
+    File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
             imvMain.setImageBitmap(bitmap);
         }
         setContentView(R.layout.activity_main);
+        preferences = getSharedPreferences( this.getLocalClassName() + "_online", MODE_PRIVATE);
+
+        file = new File(getFilesDir(), F_NAME);
+
     }
 
     public void onClick(View view) {
@@ -106,5 +117,17 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
         }
+    }
+
+    public void writeFile(File file, byte[] bytes) {
+        try(FileOutputStream outputStream = new FileOutputStream(file)) {
+            outputStream.write(bytes);
+        } catch (Exception e) { e.printStackTrace();}
+    }
+
+    public void readFile(File file, byte[] bytes) {
+        try(FileInputStream inputStream = new FileInputStream(file)) {
+            inputStream.read(bytes);
+        } catch (Exception e) { e.printStackTrace();}
     }
 }
