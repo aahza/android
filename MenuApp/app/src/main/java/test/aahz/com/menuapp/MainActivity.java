@@ -20,6 +20,18 @@ public class MainActivity extends AppCompatActivity {
         helloTv = (TextView) findViewById(R.id.hello_text);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("text", helloTv.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        helloTv.setText(savedInstanceState.getString("text"));
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
