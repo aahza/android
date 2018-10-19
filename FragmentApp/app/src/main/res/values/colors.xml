@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Material colours -->
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- Fragment colours -->
+    <color name="frRedColor">#ff4099</color>
+    <color name="frBronzeColor">#cd7f32</color>
+    <color name="frEmeraldColor">#50C878</color>
+
+
 </resources>
