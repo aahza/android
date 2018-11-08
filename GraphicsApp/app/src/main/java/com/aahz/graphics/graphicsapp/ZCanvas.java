@@ -19,6 +19,7 @@ public class ZCanvas extends View {
     Paint paint;
     Paint p2;
     Paint p3;
+    Paint p4;
     int wScreen;
     int hScreen;
     int cwScreen;
@@ -43,12 +44,21 @@ public class ZCanvas extends View {
         p2.setAntiAlias(true);
         p2.setTextSize(45f);
 
+
+
         p3 = new Paint();
         p3.setColor(Color.BLUE);
         p3.setStyle(Paint.Style.STROKE);
         p3.setStrokeWidth(1f);
         p3.setAntiAlias(true);
         p3.setTextSize(45f);
+
+        p4 = new Paint();
+        p4.setColor(Color.CYAN);
+        p4.setStyle(Paint.Style.STROKE);
+        p4.setStrokeWidth(10f);
+        p4.setAntiAlias(true);
+        p4.setTextSize(45f);
 
         // next code initialization to wrong height screen size
 //        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
@@ -82,6 +92,7 @@ public class ZCanvas extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         canvasX=w;
         canvasY=h;
+        Log.d("CANVAS ", "w=" + w + " h=" + h + " oldw=" + oldw + " oldh=" + oldh );
     }
 
     @Override
@@ -97,16 +108,17 @@ public class ZCanvas extends View {
         canvas.drawCircle(canvasX/2,canvasY/2, 7, p3);
         canvas.drawPath(frame(), p3);
         canvas.drawPath(triangle(), p3);
+        canvas.drawPath(cirle(), p4);
     }
 
     public Path triangle() {
         float tPx1, tPx2, tPx3;
         float tPy1, tPy2, tPy3;
-        float radius = 500;
+        float radius = Math.min(canvasX, canvasY)/2;
 
-        tPx1 = (float) (cwScreen - radius * Math.cos(30 * Math.PI / 180));
-        tPx2 = cwScreen ;
-        tPx3 = (float) (cwScreen + radius * Math.cos(30 * Math.PI / 180));
+        tPx1 = (float) (canvasX/2 - radius * Math.cos(30 * Math.PI / 180));
+        tPx2 = canvasX/2 ;
+        tPx3 = (float) (canvasX/2 + radius * Math.cos(30 * Math.PI / 180));
 
         tPy1 = (int) (canvasY/2 - radius * Math.sin(30 * Math.PI / 180));
         tPy2 = canvasY/2 + radius;
@@ -133,6 +145,22 @@ public class ZCanvas extends View {
         path.lineTo(canvasX - padding, canvasY - padding);
         path.lineTo(canvasX - padding, padding);
         path.lineTo(padding, padding);
+
+        path.close();
+
+        return path;
+    }
+
+    public Path cirle() {
+        float radius = Math.min(canvasX, canvasY)/2;
+        float sector = (float) Math.PI / 8f;
+
+        Path path = new Path();
+        path.reset();
+        for(float angle = 0f; angle< Math.PI*2; angle += sector) {
+            path.moveTo( (float) (canvasX/2 + radius * Math.sin(angle)), (float) (canvasY/2 + radius * Math.cos(angle)));
+            path.lineTo((float) (canvasX/2 + radius * Math.sin(angle +sector/2)),
+                    (float) (canvasY/2 + radius * Math.cos(angle + sector/2)));}
 
         path.close();
 
