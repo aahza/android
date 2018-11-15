@@ -6,5 +6,20 @@
     <item android:drawable="@drawable/evo_step3" android:duration="300" />
     <item android:drawable="@drawable/evo_step4" android:duration="300" />
     <item android:drawable="@drawable/evo_step5" android:duration="500" />
-    <item android:drawable="@drawable/evo_step6" android:duration="800" />
+    <item android:drawable="@drawable/evo_step6" android:duration="1000" />
+    <item android:drawable="@drawable/turbine_series0" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series1" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series2" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series3" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series4" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series5" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series6" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series7" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series8" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series9" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series10" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series11" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series12" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series13" android:duration="100" />
+    <item android:drawable="@drawable/turbine_series14" android:duration="100" />
 </animation-list>

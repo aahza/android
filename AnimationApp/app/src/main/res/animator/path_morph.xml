@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/animator/path_morph.xml -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:duration="3000"
+        android:propertyName="pathData"
+        android:valueFrom="M600,140 l 0,-140 140,140 0,0   -140,140z"
+        android:valueTo="M600,140 l 0,-140 140,0  0,140 -140,0 z"
+        android:valueType="pathType" />
+</set>
