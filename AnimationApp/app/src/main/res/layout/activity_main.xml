@@ -8,16 +8,33 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/hello_id"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:text="Hello Animated World!" />
 
     <ImageView
+        android:layout_centerHorizontal="true"
         android:id="@+id/evoView"
-        android:layout_width="480px"
-        android:layout_height="480px"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-         />
+        android:layout_width="704px"
+        android:layout_height="469px"
+        android:layout_below="@+id/hello_id"
+        android:layout_marginTop="8dp"
+        />
+
+    <TextView
+        android:id="@+id/animateTv"
+        android:textSize="18sp"
+        android:layout_below="@+id/evoView"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Example from documentation"
+        android:drawableBottom="@drawable/animvectordrawable"/>
 
 </RelativeLayout>

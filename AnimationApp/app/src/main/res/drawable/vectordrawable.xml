@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/vectordrawable.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="640dp"
+    android:width="640dp"
+    android:viewportHeight="1200"
+    android:viewportWidth="1200">
+    <group
+        android:name="rotationGroup"
+        android:pivotX="600.0"
+        android:pivotY="600.0"
+        android:rotation="45.0" >
+        <path
+            android:name="v"
+            android:fillColor="#000000"
+            android:pathData="M600,140 l 0,-140 140,140 0,0 -140,140z" />
+    </group>
+</vector>
