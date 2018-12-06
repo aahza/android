@@ -104,6 +104,7 @@ public class CrimeListFragment extends Fragment {
         super.onResume();
         updateUI();
     }
+
     private void updateUI() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
         List<Crime> crimes = crimeLab.getCrimes();
