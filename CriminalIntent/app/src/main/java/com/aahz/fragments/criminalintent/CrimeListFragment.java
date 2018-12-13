@@ -32,12 +32,6 @@ public class CrimeListFragment extends Fragment {
         return view;
     }
 
-//    private void updateUI() {
-//        CrimeLab crimeLab = CrimeLab.get(getActivity());
-//        List<Crime> crimes = crimeLab.getCrimes();
-//        mAdapter = new CrimeAdapter(crimes);
-//        mCrimeRecyclerView.setAdapter(mAdapter);
-//    }
 
     private class  CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mTitleTextView;
@@ -67,7 +61,8 @@ public class CrimeListFragment extends Fragment {
         public void onClick(View v) {
 //            Toast.makeText(getActivity(),mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
 //                    .show();
-            Intent intent =  CrimeActivity.newIntent(getActivity(), mCrime.getId());
+//            Intent intent =  CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            Intent intent =  CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
             startActivity(intent);
         }
     }
