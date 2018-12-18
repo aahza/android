@@ -26,13 +26,6 @@ public class CrimeLab {
         mContext = context.getApplicationContext();
         mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
 
-//        mCrimes = new ArrayList<>();
-//        for (int i = 0; i < 100; i++) {
-//            Crime crime = new Crime();
-//            crime.setTitle("Crime #" + i);
-//            crime.setSolved(i % 2 == 0); // Для каждого второго объекта
-//            mCrimes.add(crime);
-//        }
     }
 
     public Crime getCrime(UUID id) {
@@ -108,6 +101,7 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.TITLE, crime.getTitle());
         values.put(CrimeTable.Cols.DATE, crime.getDate().getTime());
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
+        values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
         return values;
     }
 }
