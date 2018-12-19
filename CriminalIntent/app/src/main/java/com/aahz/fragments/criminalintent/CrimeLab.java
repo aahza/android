@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.aahz.fragments.criminalintent.CrimeDbSchema.CrimeTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -54,7 +55,14 @@ public class CrimeLab {
                 new String[] { uuidString });
     }
 
-    private CrimeCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFilename());
+//        if (externalFilesDir == null) {
+        }
+
+
+        private CrimeCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 CrimeTable.NAME,
                 null, // columns - с null выбираются все столбцы
