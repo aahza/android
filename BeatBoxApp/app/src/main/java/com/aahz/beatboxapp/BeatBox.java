@@ -6,9 +6,6 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
-
-import com.aahz.beatboxapp.databinding.ListItemSoundBinding;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +31,10 @@ public class BeatBox {
             return;
         }
         mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1.0f);
+    }
+
+    public void release() {
+        mSoundPool.release();
     }
 
     private void loadSounds() {
