@@ -12,20 +12,47 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="Activity View" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/chbAddDel"
+            android:text="Add "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/chbVisible"
+            android:text="Visible "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"/>
+    </LinearLayout>
     <Button
         android:id="@+id/activity_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity Send"/>
+        android:text="Change Fragment"/>
     <fragment
         android:id="@+id/static_fragment"
         android:name="com.example.fragtofragapp.FragmentStatic"
         tools:layout="@layout/ex_003_first_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <FrameLayout
-        android:id="@+id/dynamic_fragment"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+        <FrameLayout
+            android:id="@+id/dynamic_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_weight="1"/>
+
+     </LinearLayout>
+
 
 </LinearLayout>
