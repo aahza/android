@@ -3,6 +3,8 @@ package com.example.fragtofragapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -35,16 +37,22 @@ public class FragmentDynamic extends Fragment implements View.OnClickListener{
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
-        Button activityBtn = getActivity().findViewById(R.id.activity_btn);
-        activityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clicks_active ++;
-                textView.setText("Set from Activity" + clicks_active);
-            }
-        });
+//        Button activityBtn = getActivity().findViewById(R.id.activity_btn);
+//        activityBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                clicks_active ++;
+//                textView.setText("Set from Activity" + clicks_active);
+//            }
+//        });
     }
 
     @Override
@@ -56,5 +64,11 @@ public class FragmentDynamic extends Fragment implements View.OnClickListener{
         clicks_dynamic ++;
         textView.setText("Text from Dynamic Fragment" + clicks_dynamic);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.dynamic_fragment_menu, menu);
     }
 }
